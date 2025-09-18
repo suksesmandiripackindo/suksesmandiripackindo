@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CV SUKSES MANDIRI PACKINDO</title>
+
+  <!-- Google Font (opsional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#efe1c6;            /* light paper */
+      --cardboard:#d7b27a;     /* main cardboard color */
+      --cardboard-dark:#c49e61;
+      --accent:#8b5e34;        /* dark brown */
+      --muted:#7b5a3b;
+      --white: #ffffff;
+      --shadow: rgba(0,0,0,0.12);
+      --radius:12px;
+      --max-width:1100px;
+    }
+
+    /* Page background: subtle paper + vignette */
+    html,body{
+      height:100%;
+      margin:0;
+      font-family: "Nunito", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg, #f6ecd9 0%, #efe1c6 100%);
+      color:var(--muted);
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .page {
+      max-width:var(--max-width);
+      margin:36px auto;
+      padding:28px;
+    }
+
+    /* Cardboard texture helper */
+    .cardboard {
+      background: 
+        repeating-linear-gradient(
+          90deg,
+          rgba(255,255,255,0.06) 0px, rgba(255,255,255,0.06) 2px,
+          transparent 2px, transparent 6px
+        ),
+        linear-gradient(180deg, var(--cardboard) 0%, var(--cardboard-dark) 100%);
+      border-radius:var(--radius);
+      box-shadow: 0 6px 18px var(--shadow);
+      border:1px solid rgba(0,0,0,0.06);
+    }
+
+    header.site-header {
+      display:flex;
+      gap:18px;
+      align-items:center;
+      padding:18px;
+      margin-bottom:18px;
+    }
+
+    .logo {
+      width:84px;
+      height:84px;
+      border-radius:12px;
+      flex:0 0 84px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: linear-gradient(180deg, #fff4e6, #f2e3cf);
+      box-shadow: inset 0 -6px 10px rgba(0,0,0,0.06);
+      border: 4px solid rgba(0,0,0,0.04);
+    }
+
+    /* simple inline SVG "box" icon */
+    .logo svg{ width:56px; height:56px; }
+
+    .site-title {
+      flex:1;
+    }
+    .site-title h1{
+      margin:0;
+      font-size:20px;
+      color:var(--accent);
+      letter-spacing:0.6px;
+    }
+    .site-title p{
+      margin:4px 0 0 0;
+      font-size:13px;
+      color:#6a4f35;
+    }
+
+    nav.topnav{
+      margin-top:10px;
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    nav.topnav a{
+      text-decoration:none;
+      padding:8px 12px;
+      border-radius:8px;
+      background:rgba(255,255,255,0.5);
+      color:var(--accent);
+      font-weight:600;
+      font-size:13px;
+      border:1px solid rgba(0,0,0,0.04);
+    }
+
+    /* Hero */
+    .hero {
+      display:grid;
+      grid-template-columns: 1fr 360px;
+      gap:18px;
+      margin-bottom:20px;
+      align-items:stretch;
+    }
+
+    .hero .intro {
+      padding:26px;
+      border-radius:12px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.45), rgba(255,255,255,0.15));
+      box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    }
+    .intro h2{
+      margin:0 0 8px 0;
+      color:var(--accent);
+      font-size:28px;
+    }
+    .intro p{ margin:0 0 12px 0; font-size:15px; color:#5b4732; line-height:1.5; }
+    .intro .cta{
+      display:inline-block;
+      padding:10px 16px;
+      background:var(--accent);
+      color:var(--white);
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:700;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    }
+
+    /* right hero card: example small box with texture */
+    .hero .showcase{
+      padding:14px;
+    }
+    .box-preview {
+      padding:20px;
+      border-radius:10px;
+      background: linear-gradient(180deg, #f8eeda, #efe0c1);
+      display:flex;
+      gap:12px;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      border:1px dashed rgba(0,0,0,0.06);
+    }
+    .box-svg{
+      width:120px; height:90px;
+      filter: drop-shadow(0 8px 18px rgba(0,0,0,0.08));
+    }
+    .box-preview p{ margin:8px 0 0 0; font-weight:700; color:var(--muted); }
+
+    /* products grid */
+    .products {
+      display:grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
+      gap:16px;
+      margin-bottom:20px;
+    }
+    .product {
+      padding:14px;
+      border-radius:12px;
+      background:var(--white);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.06);
+      border:1px solid rgba(0,0,0,0.03);
+      text-align:center;
+    }
+    .product .thumb{
+      height:120px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:12px;
+      background: linear-gradient(180deg, #fcf7f0, #f4e9d4);
+      border-radius:10px;
+    }
+    .product h4{ margin:6px 0; color:var(--accent); }
+    .product p{ margin:0; font-size:13px; color:#6e553c; }
+    .product .btn{
+      display:inline-block;
+      margin-top:10px;
+      padding:8px 12px;
+      background:var(--cardboard-dark);
+      color:var(--white);
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:700;
+    }
+
+    /* contact/footer */
+    .contact {
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-top:22px;
+      padding:18px;
+      border-radius:12px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.45), rgba(255,255,255,0.12));
+    }
+    .contact .item{ flex:1; min-width:220px; }
+    .contact h3{ margin:0 0 8px 0; color:var(--accent); }
+    .contact p{ margin:0; color:#5b4732; }
+
+    footer.site-footer{
+      margin-top:26px;
+      padding:18px;
+      text-align:center;
+      color:#6a4f35;
+      font-size:14px;
+    }
+
+    /* small screens */
+    @media (max-width:880px){
+      .hero{ grid-template-columns: 1fr; }
+      .logo{ width:72px; height:72px; flex:0 0 72px; }
+      .page{ margin:18px; padding:18px; }
+      .site-title h1{ font-size:18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- Header -->
+    <header class="site-header">
+      <div class="logo cardboard" title="Logo">
+        <!-- simple SVG box logo; ganti dengan <img src="..."> kalau mau -->
+        <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="4" y="18" width="56" height="34" rx="4" fill="#d8b07a"/>
+          <path d="M32 6 L54 18 L32 30 L10 18 Z" fill="#c49e61"/>
+          <rect x="12" y="22" width="40" height="2" fill="#8b5e34"/>
+          <rect x="30" y="6" width="4" height="24" fill="#8b5e34"/>
+        </svg>
+      </div>
+
+      <div class="site-title">
+        <h1>CV Sukses Mandiri Packindo</h1>
+        <p>Kardus berkualitas untuk usaha dan kiriman aman</p>
+
+        <nav class="topnav" aria-label="Main navigation">
+          <a href="#produk">Produk</a>
+          <a href="#layanan">Layanan</a>
+          <a href="#kontak">Kontak</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="intro cardboard">
+        <h2>Solusi Kardus Ramah & Kuat</h2>
+        <p><strong>Kami menyediakan kardus custom, packing box, dan solusi pengemasan untuk usaha skala kecil sampai industri. Pilih ukuran, cetak logo, dan pesan sesuai kebutuhan.</p>
+        <a class="cta" href="#produk">Lihat Produk</a>
+      </div>
+
+      <aside class="showcase">
+        <div class="box-preview">
+          <!-- stylized box illustration -->
+          <svg class="box-svg" viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#f7ecd8"/>
+                <stop offset="1" stop-color="#e6cf9e"/>
+              </linearGradient>
+            </defs>
+            <rect x="18" y="36" width="164" height="72" rx="6" fill="url(#g1)" stroke="#b78f59" stroke-width="3"/>
+            <path d="M18 36 L100 6 L182 36" fill="#d5b07a" stroke="#b78f59" stroke-width="3"/>
+            <rect x="60" y="10" width="80" height="8" fill="#c49e61"/>
+          </svg>
+
+          <p>Custom Box — Cetak Logo • Ukuran Bebas</p>
+        </div>
+      </aside>
+    </section>
+
+    <!-- Products -->
+    <section id="produk">
+      <h3 style="color:var(--accent); margin:0 0 12px 0;">Produk Unggulan</h3>
+
+      <div class="products">
+        <!-- product 1 -->
+        <article class="product">
+          <div class="thumb cardboard">
+            <!-- small SVG or image placeholder -->
+            <svg width="120" height="72" viewBox="0 0 120 72" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="12" width="108" height="48" rx="6" fill="#e7c89a"/>
+              <path d="M6 12 L60 -6 L114 12" fill="#d3a46f"/>
+            </svg>
+          </div>
+          <h4>Box Standar 1</h4>
+          <p>Kuat, triple-layer untuk barang elektronik. 30x20x15 cm.</p>
+          <a class="btn" href="#kontak">Pesan</a>
+        </article>
+
+        <!-- product 2 -->
+        <article class="product">
+          <div class="thumb cardboard">
+            <svg width="120" height="72" viewBox="0 0 120 72" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="12" width="108" height="48" rx="6" fill="#e7c89a"/>
+              <path d="M6 12 L60 -6 L114 12" fill="#d3a46f"/>
+            </svg>
+          </div>
+          <h4>Box A3 (Cetak Logo)</h4>
+          <p><strong>Cetak logo full color, cocok untuk brand packaging.</p>
+          <a class="btn" href="#kontak">Pesan</a>
+        </article>
+
+        <!-- product 3 -->
+        <article class="product">
+          <div class="thumb cardboard">
+            <svg width="120" height="72" viewBox="0 0 120 72" xmlns="http://www.w3.org/2000/svg">
+              <rect x="6" y="12" width="108" height="48" rx="6" fill="#e7c89a"/>
+              <path d="M6 12 L60 -6 L114 12" fill="#d3a46f"/>
+            </svg>
+          </div>
+          <h4>Bubble + Inner</h4>
+          <p><strong>Paket pelindung tambahan untuk barang rapuh.</p>
+          <a class="btn" href="#kontak">Pesan</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- Services / Layanan -->
+    <section id="layanan" style="margin-top:10px;">
+      <h3 style="color:var(--accent); margin:0 0 8px 0;">Layanan Kami</h3>
+
+      <div class="cardboard" style="padding:14px;">
+        <ul style="margin:0; padding:10px 18px; color:#5b4732; line-height:1.7;">
+          <li><strong>Produksi kardus custom ukuran & gramatur pilihan.</li>
+          <li><strong>Desain & cetak logo full color (offset/print digital).</li>
+          <li><strong>Solusi packing untuk e-commerce — packing siap kirim.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="kontak" style="margin-top:18px;">
+      <h3 style="color:var(--accent); margin:0 0 12px 0;">Hubungi Kami</h3>
+
+      <div class="contact">
+        <div class="item">
+          <h3>Alamat</h3>
+          <p><a href="https://maps.app.goo.gl/qiQn63CUHBAyYRjW6" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:700;">Jl.Kavling DPR Blok A - RT. 006 RW. 001 No.42
+Kelurahan Kenanga, Kec. Cipondoh
+Kota Tangerang 15146</p>
+        </div>
+
+        <div class="item">
+          <h3>Email</h3>
+          <p><a href="mailto:suksesmandiripackindo2@gmail.com" style="color:var(--accent); text-decoration:none; font-weight:700;">suksesmandiripackindo2@gmail.com</a></p>
+        </div>
+
+        <div class="item">
+          <h3>WhatsApp</h3>
+          <p><a href="https://wa.me/6281385430263" target="_blank" style="color:var(--accent); text-decoration:none; font-weight:700;">+62 813-8543-0263</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <small>© <span id="year"></span> Semua hak di lindungi.</small>
+    </footer>
+  </div>
+
+  <script>
+    // simple JS: current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
